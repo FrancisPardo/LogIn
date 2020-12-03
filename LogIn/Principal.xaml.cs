@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace LogIn
@@ -22,6 +23,23 @@ namespace LogIn
         public Principal()
         {
             InitializeComponent();
+        }
+
+        private void BtnSomos_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OpenWindow(object sender, RoutedEventArgs e)
+        {
+            Quienes objQuienes = new Quienes();
+            this.Visibility = Visibility.Hidden;
+            objQuienes.Show();
+        }
+
+        private void BtnCerrar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

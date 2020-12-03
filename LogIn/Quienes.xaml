@@ -1,0 +1,31 @@
+﻿<Window x:Class="LogIn.Quienes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogIn"
+        mc:Ignorable="d"
+        Title="Quienes" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Grid.Column="2" Height="90" Width="400" Margin="1" Source="C:\Users\PC\source\repos\LogIn\LogIn\progra 2.png"/>
+        <Label  Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="1" Content="Pagina Web:" FontSize="18" FontWeight="Bold"/>
+        <Label  Grid.Row="2"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="1" Content="Integrantes:" FontSize="18" FontWeight="Bold"/>
+        <Label Grid.Row="1" Grid.Column="2" Content="www.areco.com" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+        <Label Grid.Row="2" Grid.Column="2" Content="Francis Andres Pardo Sandi" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+        <Label Grid.Row="3" Grid.Column="2" Content="JHON BRAYAN CALDERON GARCIA" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+        <Label Grid.Row="4" Grid.Column="2" Content="JUAN PABLO RODRIGUEZ HERMOSA" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+        <Label Grid.Row="5" Grid.Column="2" Content="Pablo Ariel Urquiri Lara" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
