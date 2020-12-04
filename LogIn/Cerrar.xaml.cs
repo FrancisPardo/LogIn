@@ -26,7 +26,9 @@ namespace LogIn
 
         private void BtnNo_Click(object sender, RoutedEventArgs e)
         {
-            
+            Principal objPrincipal = new Principal();
+            this.Visibility = Visibility.Hidden;
+            objPrincipal.Show();
         }
 
         private void BtnSi_Click(object sender, RoutedEventArgs e)
