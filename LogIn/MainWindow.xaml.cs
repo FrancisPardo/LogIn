@@ -64,6 +64,7 @@ namespace LogIn
                     {
                         lblMensaje.Content = "Bienvenido";
                         new Principal().ShowDialog();
+                        this.Close();
                     }
                     else
                     {
