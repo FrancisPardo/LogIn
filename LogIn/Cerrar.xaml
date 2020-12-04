@@ -1,0 +1,18 @@
+﻿<Window x:Class="LogIn.Cerrar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogIn"
+        mc:Ignorable="d"
+        Title="Cerrar" Height="250" Width="800">
+    <Grid>
+        <Label   VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="1" Content="Estas seguro que quieres salir?" FontSize="18" FontWeight="Bold"/>
+        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Height="80" Width="300" Margin="90,132,0,7">
+            <Button Click="BtnSi_Click" Background="Brown"  Name="btnSi" Content="Si" Margin="1" Width="250" Height="40" FontSize="30" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="SemiBold" />
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="80" Width="300" Margin="0,132,102,7">
+            <Button Click="BtnNo_Click" Background="Brown"  Name="btnNo" Content="No" Margin="20" Width="250" Height="40" FontSize="30" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="SemiBold" />
+        </StackPanel>
+    </Grid>
+</Window>

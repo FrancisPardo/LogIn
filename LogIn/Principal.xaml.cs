@@ -37,9 +37,18 @@ namespace LogIn
             objQuienes.Show();
         }
 
-        private void BtnCerrar_Click(object sender, RoutedEventArgs e)
+        private void Open(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Cerrar objCerrar = new Cerrar();
+            this.Visibility = Visibility.Hidden;
+            objCerrar.Show();
+        }
+
+        private void Producto(object sender, RoutedEventArgs e)
+        {
+            Producto objProducto = new Producto();
+            this.Visibility = Visibility.Hidden;
+            objProducto.Show();
         }
     }
 }

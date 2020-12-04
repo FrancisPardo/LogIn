@@ -1,0 +1,50 @@
+﻿<Window x:Class="LogIn.Producto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogIn"
+        mc:Ignorable="d"
+        Title="Producto" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="#FF3476A1" Grid.ColumnSpan="3">
+            <Label Content="ID :" FontSize="25" FontWeight="Bold" VerticalContentAlignment="Center"/>
+            <TextBox Width="70" Height="50" Name="txtidproducto" VerticalContentAlignment="Center" Margin="5" FontSize="18" ToolTip="id"/>
+            <TextBox Width="250" Height="50" Name="txtnombreproducto" VerticalContentAlignment="Center" Margin="5" FontSize="18" ToolTip="Nombre del producto"/>
+        </StackPanel>
+
+        <Label Grid.Row="1" Content="Codigo de barra :" FontSize="18" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Width="275" Height="50" Name="txtcodebarra" VerticalContentAlignment="Center" Margin="5" FontSize="18" />
+
+
+        <Label Grid.Row="2" Content="Precio de compra :" FontSize="18" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Width="275" Height="50" Name="txtPrecioCompra" VerticalContentAlignment="Center" Margin="5" FontSize="18" />
+
+
+        <Label Grid.Row="3"  Content="Precio de venta :" FontSize="18" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Width="275" Height="50" x:Name="txtPrecioVenta" VerticalContentAlignment="Center" Margin="5" FontSize="18" />
+
+
+        <Label Grid.Row="4" Content="Cantidad :" FontSize="18" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Width="275" Height="50" x:Name="txtcantidadproducto" VerticalContentAlignment="Center" Margin="5" FontSize="18" />
+
+
+        <Button Click="btnCrear_Click"  Name="btnCrear" Grid.Column="2" Grid.Row="1" Content="Agregar Producto" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
+        <Button Name="btnModificar" Grid.Column="2" Grid.Row="2" Content="Modificar Producto" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
+        <Button Click="btnEliminar_Click" Name="btnEliminar" Grid.Column="2" Grid.Row="3" Content="Eliminar Producto" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
+        <Button Name="btn" Grid.Column="2" Grid.Row="4" Content="Mostrar Productos" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
+    </Grid>
+</Window>
