@@ -16,7 +16,8 @@
             <Button Background="Brown"  Name="btnSomos" Content="Quienes Somos" Margin="1" Width="250" Height="40" FontSize="30" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="SemiBold" Click="OpenWindow"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="80" Width="300" Margin="0,339,0,0">
-            <Button Background="Brown"  Name="btnCerrar" Content="Salir" Margin="20" Width="250" Height="40" FontSize="30" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="SemiBold" Click="Open"/>
+            <Button Click="BtnCerrar_Click" Background="Brown"  Name="btnCerrar" Content="Salir" Margin="20" Width="250" Height="40" FontSize="30" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="SemiBold" />
         </StackPanel>
     </Grid>
 </Window>
+

@@ -42,6 +42,7 @@ namespace LogIn
             Cerrar objCerrar = new Cerrar();
             this.Visibility = Visibility.Hidden;
             objCerrar.Show();
+            // Click = "Open"
         }
 
         private void Producto(object sender, RoutedEventArgs e)
@@ -49,6 +50,20 @@ namespace LogIn
             Producto objProducto = new Producto();
             this.Visibility = Visibility.Hidden;
             objProducto.Show();
+        }
+
+        private void BtnCerrar_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Esta seguro que desea \"Salir\"?", "Juan Pablo", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    this.Close();
+                    break;
+                case MessageBoxResult.No:
+                    this.Show();
+                    break;
+            }
         }
     }
 }
