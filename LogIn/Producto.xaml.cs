@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace LogIn
@@ -155,6 +156,118 @@ namespace LogIn
         private void CrearArchivo()
         {
             File.CreateText(pathName);
+        }
+
+        private void btnModificar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string idproductUPDATE = txtidproducto.Text;
+                string datosModificados1 = txtnombreproducto.Text;
+                string datosModificados2 = txtcodebarra.Text;
+                string datosModificados3 = txtPrecioCompra.Text;
+                string datosModificados4 = txtPrecioVenta.Text;
+                string datosModificados5 = txtcantidadproducto.Text;
+                string linea;
+                string[] datosProducto;
+                char separador = ',';
+                bool modificado = false;
+
+                string ID = idproductUPDATE.ToString();
+                string PC = datosModificados3.ToString();
+                string PV = datosModificados4.ToString();
+                string C = datosModificados5.ToString();
+
+                StreamReader tuberiaLectura = File.OpenText(pathName);
+                StreamWriter tuberiaEscritura = File.AppendText(pathNameAuxiliar);
+                linea = tuberiaLectura.ReadLine();
+                while (linea != null)
+                {
+                    datosProducto = linea.Split(separador);
+                    if (idproductUPDATE == datosProducto[0])
+                    {
+                        modificado = true;
+                        tuberiaEscritura.WriteLine(idproductUPDATE + "," + datosModificados1 + "," + datosModificados2 + "," + datosModificados3 + "," + datosModificados4 + "," + datosModificados5);
+                    }
+                    else
+                    {
+                        tuberiaEscritura.WriteLine(linea);
+                    }
+                    linea = tuberiaLectura.ReadLine();
+                }
+                if (modificado)
+                {
+                    MessageBox.Show("La mascota se modifico con exito");
+                }
+                else
+                {
+                    MessageBox.Show("Mascota no encontrada");
+                }
+
+                tuberiaEscritura.Close();
+                tuberiaLectura.Close();
+
+                File.Delete(pathName);
+                File.Move(pathNameAuxiliar, pathName);
+                File.Delete(pathNameAuxiliar);
+                txtidproducto.Text = "";
+                txtnombreproducto.Text = "";
+                txtcodebarra.Text = "";
+                txtPrecioCompra.Text = "";
+                txtPrecioVenta.Text = "";
+                txtcantidadproducto.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar el prducto \nPor favor verifique si ingreso todos los datos del producto " + ex.Message);
+            }
+        }
+
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            MostrarProductos();
+        }
+
+        private void dgProductos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void MostrarProductos()
+        {
+            try
+            {
+                if (File.Exists(pathName))
+                {
+                    Productosdg producto;
+                    List<Productosdg> listaProductos = new List<Productosdg>();
+                    string[] datosProducto;
+                    string id, nombre, codebarra, preciocompra, precioventa, cantidad;
+                    StreamReader tuberiaLectura = File.OpenText(pathName);
+                    string linea = tuberiaLectura.ReadLine();
+                    while (linea != null)
+                    {
+                        datosProducto = linea.Split(',');
+                        id = datosProducto[0];
+                        nombre = datosProducto[1];
+                        codebarra = datosProducto[2];
+                        preciocompra = datosProducto[3];
+                        precioventa = datosProducto[4];
+                        cantidad = datosProducto[5];
+                        producto = new Productosdg(id, nombre, codebarra, preciocompra, precioventa, cantidad);
+
+                        listaProductos.Add(producto);
+                        producto = null;
+                        linea = tuberiaLectura.ReadLine();
+                    }
+                    tuberiaLectura.Close();
+                    dgProductos.ItemsSource = listaProductos;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
         }
     }
 }

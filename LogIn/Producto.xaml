@@ -18,6 +18,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
 
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Background="#FF3476A1" Grid.ColumnSpan="3">
@@ -43,8 +44,12 @@
 
 
         <Button Click="btnCrear_Click"  Name="btnCrear" Grid.Column="2" Grid.Row="1" Content="Agregar Producto" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
-        <Button Name="btnModificar" Grid.Column="2" Grid.Row="2" Content="Modificar Producto" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
+        <Button Click="btnModificar_Click" Name="btnModificar" Grid.Column="2" Grid.Row="2" Content="Modificar Producto" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
         <Button Click="btnEliminar_Click" Name="btnEliminar" Grid.Column="2" Grid.Row="3" Content="Eliminar Producto" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
-        <Button Name="btn" Grid.Column="2" Grid.Row="4" Content="Mostrar Productos" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
+        <Button Click="btn_Click"  Name="btn" Grid.Column="2" Grid.Row="4" Content="Mostrar Productos" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
+
+        <DataGrid SelectionChanged="dgProductos_SelectionChanged" Name="dgProductos" Grid.Row="5" Grid.ColumnSpan="3"/>
+
+
     </Grid>
 </Window>
