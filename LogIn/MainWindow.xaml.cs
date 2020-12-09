@@ -35,7 +35,7 @@ namespace LogIn
                 if (!File.Exists(pathName))
                 {
                     File.Create(pathName).Dispose();
-                    Escribir("administrador,administrador,user,use1234");
+                    Escribir("administrador,administrador,user,a123");
                 }
 
             }
