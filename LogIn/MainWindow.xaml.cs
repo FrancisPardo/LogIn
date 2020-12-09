@@ -21,7 +21,7 @@ namespace LogIn
     /// </summary>
     public partial class MainWindow : Window
     {
-        string pathName = @"D:\usuarios.txt";
+        string pathName = @".\usuarios.txt";
         public MainWindow()
         {
             InitializeComponent();
