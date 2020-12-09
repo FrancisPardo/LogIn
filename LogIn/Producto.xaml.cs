@@ -21,8 +21,8 @@ namespace LogIn
     /// </summary>
     public partial class Producto : Window
     {
-        string pathName = @"c:\productos.txt";
-        string pathNameAuxiliar = @"c:\auxiliar.txt";
+        string pathName = @".\usuarios.txt";
+        string pathNameAuxiliar = @".\usuarios.txt";
         public Producto()
         {
             InitializeComponent();
