@@ -21,11 +21,12 @@ namespace LogIn
     /// </summary>
     public partial class Producto : Window
     {
-        string pathName = @".\usuarios.txt";
-        string pathNameAuxiliar = @".\usuarios.txt";
+        string pathName = @".\productos.txt";
+        string pathNameAuxiliar = @".\productosAuxiliar.txt";
         public Producto()
         {
             InitializeComponent();
+
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
@@ -111,6 +112,11 @@ namespace LogIn
                             tuberiaEscritura.Close();
                             MessageBox.Show("Producto agregado con exito");
                             txtnombreproducto.Text = "";
+                            txtidproducto.Text = "";
+                            txtcodebarra.Text = "";
+                            txtPrecioCompra.Text = "";
+                            txtPrecioVenta.Text = "";
+                            txtcantidadproducto.Text = "";
                         }
                         else
                         {
@@ -230,7 +236,9 @@ namespace LogIn
 
         private void dgProductos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            Productosdg producto = new Productosdg();
+            producto = (Productosdg)dgProductos.SelectedItem;
+            txtidproducto.Text = producto.Id;
         }
         private void MostrarProductos()
         {
@@ -268,6 +276,12 @@ namespace LogIn
             {
                 MessageBox.Show("" + ex);
             }
+        }
+
+        private void btnBackFROMPRODUCTS_Click(object sender, RoutedEventArgs e)
+        {
+            new Principal().ShowDialog();
+            this.Close();
         }
     }
 }

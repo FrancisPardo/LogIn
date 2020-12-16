@@ -54,7 +54,7 @@ namespace LogIn
 
         private void BtnCerrar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Esta seguro que desea \"Salir\"?", "Juan Pablo", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult result = MessageBox.Show("Esta seguro que desea \"Salir\"?", "LogIn", MessageBoxButton.YesNo, MessageBoxImage.Question);
             switch (result)
             {
                 case MessageBoxResult.Yes:
@@ -64,6 +64,13 @@ namespace LogIn
                     this.Show();
                     break;
             }
+        }
+
+        private void Ventas(object sender, RoutedEventArgs e)
+        {
+            MostrarVenta objMostrarVenta = new MostrarVenta();
+            this.Visibility = Visibility.Hidden;
+            objMostrarVenta.Show();
         }
     }
 }
