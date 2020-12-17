@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:LogIn"
         mc:Ignorable="d"
         Title="LogIn" Height="400" Width="600">
-    <Border CornerRadius="25" Background="DodgerBlue" Margin="20">
+    <Border CornerRadius="25" Background="Black" Margin="20">
         <StackPanel Margin="20">
-            <Label Content="LOGIN" Foreground="#FFFFFF" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <Label  Content="INICIAR SESION" Foreground="#FFFFFF" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"/>
             <Separator Background="Black"/>
-            <Label Content="USUARIO" FontSize="20" HorizontalAlignment="Left" FontWeight="SemiBold"/>
+            <Label Foreground="#FFFFFF" Content="USUARIO" FontSize="20" HorizontalAlignment="Left" FontWeight="SemiBold"/>
             <TextBox Name="txbUsuario" FontSize="18"/>
-            <Label Content="CONTRASEÑA" FontSize="20" HorizontalAlignment="Left" FontWeight="SemiBold"/>
+            <Label Foreground="#FFFFFF" Content="CONTRASEÑA" FontSize="20" HorizontalAlignment="Left" FontWeight="SemiBold"/>
             <PasswordBox Name="txbPassword" FontSize="18"/>
             <Button Click="BtnIngresar_Click" Margin="20" FontSize="20" Content="INGRESAR" Name="btnIngresar" Background="Brown" Foreground="White" FontWeight="SemiBold"/>
             <Label Name="lblMensaje" Margin="5" Content="-" FontSize="20" HorizontalAlignment="Left" FontWeight="SemiBold"/>

@@ -6,17 +6,18 @@
         xmlns:local="clr-namespace:LogIn"
         mc:Ignorable="d"
         Title="Principal" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FF420000">
         <StackPanel>
-            <Button  Width="600" Height="50" Margin="20" FontSize="20" Content="Productos" Name="btnProductos" Background="Brown" Foreground="White" FontWeight="SemiBold" Click="Producto"/>
-            <Button  Width="600" Height="50"  Margin="20" FontSize="20" Content="Ventas" Name="btnVentas" Background="Brown" Foreground="White" FontWeight="SemiBold" Click="Ventas"/>
-            <Button  Width="600" Height="50"  Margin="20" FontSize="20" Content="Reportes" Name="btnReportes" Background="Brown" Foreground="White" FontWeight="SemiBold"/>
+            <Button  Width="600" Height="30" Margin="20" FontSize="20" Content="Productos" Name="btnProductos" Background="Brown" Foreground="White" FontWeight="SemiBold" Click="Producto"/>
+            <Button  Width="600" Height="30"  Margin="20" FontSize="20" Content="Ventas" Name="btnVentas" Background="Brown" Foreground="White" FontWeight="SemiBold" Click="Ventas"/>
+            <Button  Width="600" Height="30"  Margin="20" FontSize="20" Content="Reportes" Name="btnReportes" Background="Brown" Foreground="White" FontWeight="SemiBold" Click="BtnReportes_Click"/>
+            <Button  Width="600" Height="30"  Margin="20" FontSize="20" Content="Usuarios" Name="btnUsuario" Background="Brown" Foreground="White" FontWeight="SemiBold" Click="BtnUsuario_Click"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Height="80" Width="300" Margin="0,339,0,0">
-            <Button Background="Brown"  Name="btnSomos" Content="Quienes Somos" Margin="1" Width="250" Height="40" FontSize="30" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="SemiBold" Click="OpenWindow"/>
+            <Button Background="#FFECEC35"  Name="btnSomos" Content="Quienes Somos" Margin="1" Width="250" Height="40" FontSize="30" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="SemiBold" Click="OpenWindow"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="80" Width="300" Margin="0,339,0,0">
-            <Button Click="BtnCerrar_Click" Background="Brown"  Name="btnCerrar" Content="Salir" Margin="20" Width="250" Height="40" FontSize="30" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="SemiBold" />
+            <Button Click="BtnCerrar_Click" Background="#FFECEC35"  Name="btnCerrar" Content="Salir" Margin="20" Width="250" Height="40" FontSize="30" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="SemiBold" />
         </StackPanel>
     </Grid>
 </Window>

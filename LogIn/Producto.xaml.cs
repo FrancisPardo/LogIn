@@ -21,267 +21,112 @@ namespace LogIn
     /// </summary>
     public partial class Producto : Window
     {
-        string pathName = @".\productos.txt";
-        string pathNameAuxiliar = @".\productosAuxiliar.txt";
+        public static int[] id = new int[15];
+        public static string[] nom = new string[15];
+        public static int[] cod = new int[15];
+        public static float[] pv = new float[15];
+        public static float[] pc = new float[15];
+        public static int[] can = new int[15];
+
+        public int i;
         public Producto()
         {
             InitializeComponent();
-
         }
 
-        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (Convert.ToString(btn1.Content) == "Registrar")
             {
-                string nombreEliminar = txtnombreproducto.Text;
-                string linea;
-                string[] datosProducto;
-                char separador = ',';
-                bool eliminado = false;
-                StreamReader tuberiaLectura = File.OpenText(pathName);
-                StreamWriter tuberiaEscritura = File.AppendText(pathNameAuxiliar);
-                linea = tuberiaLectura.ReadLine();
-                while (linea != null)
+                if (i < 15)
                 {
-                    datosProducto = linea.Split(separador);
-                    if (nombreEliminar == datosProducto[1])
-                    {
-                        eliminado = true;
-                    }
-                    else
-                    {
-                        tuberiaEscritura.WriteLine(linea);
-                    }
-                    linea = tuberiaLectura.ReadLine();
+                    id[i] = int.Parse(txt1.Text);
+                    nom[i] = txt2.Text;
+                    cod[i] = int.Parse(txt3.Text);
+                    pc[i] = float.Parse(txt4.Text);
+                    pv[i] = float.Parse(txt5.Text);
+                    can[i] = int.Parse(txt6.Text);
+                    txt1.Text = "";
+                    txt2.Text = "";
+                    txt3.Text = "";
+                    txt4.Text = "";
+                    txt5.Text = "";
+                    txt6.Text = "";
+                    i++;
                 }
-                if (eliminado)
+            }
+            else
+            {
+                if (Convert.ToString(btn1.Content) == "Modificar")
                 {
-                    MessageBox.Show("El producto se eliminó con exito");
+                    int b;
+                    b = int.Parse(txt1.Text);
+                    for (int f = 0; f < 15; f++)
+                    {
+
+                        if (b == id[f])
+                        {
+                            nom[f] = txt2.Text;
+                            cod[f] = int.Parse(txt3.Text);
+                            pc[f] = float.Parse(txt4.Text);
+                            pv[f] = float.Parse(txt5.Text);
+                            can[f] = int.Parse(txt6.Text);
+                            txt1.Text = "";
+                            txt2.Text = "";
+                            txt3.Text = "";
+                            txt4.Text = "";
+                            txt5.Text = "";
+                            txt6.Text = "";
+                        }
+                    }
+                    btn1.Content = "Registrar";
+
                 }
                 else
                 {
-                    MessageBox.Show("Producto no encontrado, no se eliminó");
-                }
-                tuberiaEscritura.Close();
-                tuberiaLectura.Close();
-
-                File.Delete(pathName);
-                File.Move(pathNameAuxiliar, pathName);
-                File.Delete(pathNameAuxiliar);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error al eliminar " + ex.Message);
-
-            }
-
-        }
-
-        private void btnCrear_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (File.Exists(pathName))
-                {
-                    int idProducto = int.Parse(txtidproducto.Text);
-                    string nombreProducto = txtnombreproducto.Text.Trim();
-                    string codigoBarra = txtcodebarra.Text.Trim();
-                    double precioCompra = double.Parse(txtPrecioCompra.Text);
-                    double precioVenta = double.Parse(txtPrecioVenta.Text);
-                    int cantidad = int.Parse(txtcantidadproducto.Text);
-
-
-                    string ID = idProducto.ToString();
-                    string PC = precioCompra.ToString();
-                    string PV = precioVenta.ToString();
-                    string C = cantidad.ToString();
-
-
-
-                    if (nombreProducto != "" && ID != "" && PC != "" && PV != "" && C != "")
+                    int b;
+                    b = int.Parse(txt1.Text);
+                    for (int f = 0; f < 15; f++)
                     {
-                        if (codigoBarra == "")
+                        if (b == id[f])
                         {
-                            codigoBarra = "NULL";
-                        }
-                        if (ValidarId(ID))
-                        {
-                            StreamWriter tuberiaEscritura = File.AppendText(pathName);
-                            tuberiaEscritura.WriteLine(ID + "," + nombreProducto + "," + codigoBarra + "," + PC + "," + PV + "," + C);
-                            tuberiaEscritura.Close();
-                            MessageBox.Show("Producto agregado con exito");
-                            txtnombreproducto.Text = "";
-                            txtidproducto.Text = "";
-                            txtcodebarra.Text = "";
-                            txtPrecioCompra.Text = "";
-                            txtPrecioVenta.Text = "";
-                            txtcantidadproducto.Text = "";
-                        }
-                        else
-                        {
-                            MessageBox.Show("Pruebe ingresando otro ID");
+                            id[f] = 0;
+                            nom[f] = "";
+                            cod[f] = 0;
+                            pc[f] = 0;
+                            pv[f] = 0;
+                            can[f] = 0;
+                            txt1.Text = "";
+                            txt2.Text = "";
+                            txt3.Text = "";
+                            txt4.Text = "";
+                            txt5.Text = "";
+                            txt6.Text = "";
+                            f = 16;
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Introduzca los datos necesarios");
-                    }
+                    btn1.Content = "Registrar";
+
                 }
-                else
-                {
-                    CrearArchivo();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("" + ex);
             }
         }
 
-        private bool ValidarId(string ID)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            bool respuesta = true;
-            StreamReader tuberiaLectura = File.OpenText(pathName);
-            string[] datos;
-            string linea = tuberiaLectura.ReadLine();
-            while (linea != null)
-            {
-                datos = linea.Split(',');
-                if (datos[0] == ID)
-                {
-                    respuesta = false;
-                    break;
-                }
-                linea = tuberiaLectura.ReadLine();
-            }
-            tuberiaLectura.Close();
-            return respuesta;
-        }
-
-        private void CrearArchivo()
-        {
-            File.CreateText(pathName);
-        }
-
-        private void btnModificar_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                string idproductUPDATE = txtidproducto.Text;
-                string datosModificados1 = txtnombreproducto.Text;
-                string datosModificados2 = txtcodebarra.Text;
-                string datosModificados3 = txtPrecioCompra.Text;
-                string datosModificados4 = txtPrecioVenta.Text;
-                string datosModificados5 = txtcantidadproducto.Text;
-                string linea;
-                string[] datosProducto;
-                char separador = ',';
-                bool modificado = false;
-
-                string ID = idproductUPDATE.ToString();
-                string PC = datosModificados3.ToString();
-                string PV = datosModificados4.ToString();
-                string C = datosModificados5.ToString();
-
-                StreamReader tuberiaLectura = File.OpenText(pathName);
-                StreamWriter tuberiaEscritura = File.AppendText(pathNameAuxiliar);
-                linea = tuberiaLectura.ReadLine();
-                while (linea != null)
-                {
-                    datosProducto = linea.Split(separador);
-                    if (idproductUPDATE == datosProducto[0])
-                    {
-                        modificado = true;
-                        tuberiaEscritura.WriteLine(idproductUPDATE + "," + datosModificados1 + "," + datosModificados2 + "," + datosModificados3 + "," + datosModificados4 + "," + datosModificados5);
-                    }
-                    else
-                    {
-                        tuberiaEscritura.WriteLine(linea);
-                    }
-                    linea = tuberiaLectura.ReadLine();
-                }
-                if (modificado)
-                {
-                    MessageBox.Show("La mascota se modifico con exito");
-                }
-                else
-                {
-                    MessageBox.Show("Mascota no encontrada");
-                }
-
-                tuberiaEscritura.Close();
-                tuberiaLectura.Close();
-
-                File.Delete(pathName);
-                File.Move(pathNameAuxiliar, pathName);
-                File.Delete(pathNameAuxiliar);
-                txtidproducto.Text = "";
-                txtnombreproducto.Text = "";
-                txtcodebarra.Text = "";
-                txtPrecioCompra.Text = "";
-                txtPrecioVenta.Text = "";
-                txtcantidadproducto.Text = "";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al modificar el prducto \nPor favor verifique si ingreso todos los datos del producto " + ex.Message);
-            }
-        }
-
-        private void btn_Click(object sender, RoutedEventArgs e)
-        {
-            MostrarProductos();
-        }
-
-        private void dgProductos_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Productosdg producto = new Productosdg();
-            producto = (Productosdg)dgProductos.SelectedItem;
-            txtidproducto.Text = producto.Id;
-        }
-        private void MostrarProductos()
-        {
-            try
-            {
-                if (File.Exists(pathName))
-                {
-                    Productosdg producto;
-                    List<Productosdg> listaProductos = new List<Productosdg>();
-                    string[] datosProducto;
-                    string id, nombre, codebarra, preciocompra, precioventa, cantidad;
-                    StreamReader tuberiaLectura = File.OpenText(pathName);
-                    string linea = tuberiaLectura.ReadLine();
-                    while (linea != null)
-                    {
-                        datosProducto = linea.Split(',');
-                        id = datosProducto[0];
-                        nombre = datosProducto[1];
-                        codebarra = datosProducto[2];
-                        preciocompra = datosProducto[3];
-                        precioventa = datosProducto[4];
-                        cantidad = datosProducto[5];
-                        producto = new Productosdg(id, nombre, codebarra, preciocompra, precioventa, cantidad);
-
-                        listaProductos.Add(producto);
-                        producto = null;
-                        linea = tuberiaLectura.ReadLine();
-                    }
-                    tuberiaLectura.Close();
-                    dgProductos.ItemsSource = listaProductos;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("" + ex);
-            }
-        }
-
-        private void btnBackFROMPRODUCTS_Click(object sender, RoutedEventArgs e)
-        {
-            new Principal().ShowDialog();
             this.Close();
+        }
+
+        private void Btn2_Click(object sender, RoutedEventArgs e)
+        {
+            MostrarProducto objMostrarProducto = new MostrarProducto();
+            this.Visibility = Visibility.Hidden;
+            objMostrarProducto.Show();
+        }
+
+        private void BtnAtras_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            new Principal().ShowDialog();
         }
     }
 }

@@ -58,8 +58,14 @@
     <Compile Include="Cerrar.xaml.cs">
       <DependentUpon>Cerrar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MostrarProducto.xaml.cs">
+      <DependentUpon>MostrarProducto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MostrarVenta.xaml.cs">
       <DependentUpon>MostrarVenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoUsuario.xaml.cs">
+      <DependentUpon>NuevoUsuario.xaml</DependentUpon>
     </Compile>
     <Compile Include="Producto.xaml.cs">
       <DependentUpon>Producto.xaml</DependentUpon>
@@ -67,6 +73,9 @@
     <Compile Include="Productosdg.cs" />
     <Compile Include="Quienes.xaml.cs">
       <DependentUpon>Quienes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TotalVentas.xaml.cs">
+      <DependentUpon>TotalVentas.xaml</DependentUpon>
     </Compile>
     <Page Include="Cerrar.xaml">
       <SubType>Designer</SubType>
@@ -84,7 +93,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MostrarProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MostrarVenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NuevoUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Quienes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TotalVentas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

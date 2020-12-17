@@ -5,58 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LogIn"
         mc:Ignorable="d"
-        Title="Producto" Height="480" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="3*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="5*"/>
-
-        </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Background="#FF3476A1" Grid.ColumnSpan="3" >
-            <Label Content="ID :" FontSize="25" FontWeight="Bold" VerticalContentAlignment="Center"/>
-            <TextBox Width="70" Height="25" Name="txtidproducto" VerticalContentAlignment="Center" Margin="5" FontSize="18" ToolTip="id"/>
-            <TextBox Width="250" Height="25" Name="txtnombreproducto" VerticalContentAlignment="Center" Margin="5" FontSize="18" ToolTip="Nombre del producto"/>
-
-        </StackPanel>
-
-        <Button Click="btnBackFROMPRODUCTS_Click" Name="btnBackFROMPRODUCTS" Width="75" Height="65" Margin="0,0,0,-0.333" HorizontalAlignment="Stretch" Grid.Column="2" Style="{StaticResource MyButton}">
+        Title="Producto" Height="300" Width="800">
+    <Grid Background="Black">
+        <Label Foreground="White" Content="Id" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt1" HorizontalAlignment="Left" Height="23" Margin="191,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Foreground="White" Content="Nombre" HorizontalAlignment="Left" Margin="26,38,0,0" VerticalAlignment="Top"/>
+        <TextBox  x:Name="txt2" HorizontalAlignment="Left" Height="23" Margin="191,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Foreground="White" Content="Codigo Barra" HorizontalAlignment="Left" Margin="26,66,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt3" HorizontalAlignment="Left" Height="23" Margin="191,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Foreground="White" Content="Precio Compra" HorizontalAlignment="Left" Margin="26,94,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt4" HorizontalAlignment="Left" Height="23" Margin="191,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Foreground="White" Content="Precio Venta" HorizontalAlignment="Left" Margin="26,122,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt5" HorizontalAlignment="Left" Height="23" Margin="191,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Foreground="White" Content="Cantidad" HorizontalAlignment="Left" Margin="26,150,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt6" HorizontalAlignment="Left" Height="23" Margin="191,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Background="Red" Foreground="White" x:Name="btn1" Content="Registrar" HorizontalAlignment="Left" Height="48" Margin="26,190,0,0" VerticalAlignment="Top" Width="186" Click="Button_Click"/>
+        <Button Background="Red" Foreground="White" x:Name="btn2" Content="Lista de Productos" HorizontalAlignment="Left" Height="48" Margin="240,190,0,0" VerticalAlignment="Top" Width="186" Click="Btn2_Click"/>
+        <Button Click="BtnAtras_Click" Name="btnAtras" Content="" Margin="0,10,766,231" HorizontalAlignment="Stretch" Style="{StaticResource MyButton}" RenderTransformOrigin="0.343,-2.304">
             <Button.Background>
-                <ImageBrush ImageSource="windows_media_player_back_button_preview.png"/>
+                <ImageBrush ImageSource="/windows_media_player_back_button_preview.png" />
             </Button.Background>
         </Button>
-
-        <Label Grid.Row="1" Content="Codigo de barra :" FontSize="18" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Width="275" Height="30" Name="txtcodebarra" VerticalContentAlignment="Center" Margin="5" FontSize="18" />
-
-
-        <Label Grid.Row="2" Content="Precio de compra :" FontSize="18" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Width="275" Height="30" Name="txtPrecioCompra" VerticalContentAlignment="Center" Margin="5" FontSize="18" />
-
-
-        <Label Grid.Row="3"  Content="Precio de venta :" FontSize="18" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Width="275" Height="30" x:Name="txtPrecioVenta" VerticalContentAlignment="Center" Margin="5" FontSize="18" />
-
-
-        <Label Grid.Row="4" Content="Cantidad :" FontSize="18" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Width="275" Height="30" x:Name="txtcantidadproducto" VerticalContentAlignment="Center" Margin="5" FontSize="18"/>
-
-
-        <Button Click="btnCrear_Click"  x:Name="btnCrear" Grid.Column="2" Grid.Row="1" Content="Registrar" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
-        <Button Click="btnModificar_Click" Name="btnModificar" Grid.Column="2" Grid.Row="2" Content="Modificar Producto" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
-        <Button Click="btnEliminar_Click" Name="btnEliminar" Grid.Column="2" Grid.Row="3" Content="Eliminar Producto" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
-        <Button Click="btn_Click"  Name="btn" Grid.Column="2" Grid.Row="4" Content="Mostrar Productos" FontSize="20" FontWeight="DemiBold" Background="Black" Foreground="White" BorderBrush="White"/>
-
-        <DataGrid SelectionChanged="dgProductos_SelectionChanged" Name="dgProductos" Grid.Row="5" Grid.ColumnSpan="3"/>
-
-
     </Grid>
+
 </Window>

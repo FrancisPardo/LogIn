@@ -1,0 +1,22 @@
+﻿<Window x:Class="LogIn.NuevoUsuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogIn"
+        mc:Ignorable="d"
+        Title="NuevoUsuario" Height="450" Width="800">
+    <Grid Background="Black">
+        <Label Foreground="White" Content="Nombre Usuario" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="White" Content="Contraseña" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top"/>
+        <TextBox Background="Red" x:Name="txt1" HorizontalAlignment="Left" Height="23" Margin="147,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Background="Red" x:Name="txt2" HorizontalAlignment="Left" Height="23" Margin="147,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Foreground="White" Background="Red" x:Name="btn1" Content="Registrar" HorizontalAlignment="Left" Height="46" Margin="115,122,0,0" VerticalAlignment="Top" Width="152" Click="btn1_Click"/>
+        <Button Click="BtnAtras_Click" Name="btnAtras" Content=""  Margin="10,123,737,251" HorizontalAlignment="Stretch" Style="{StaticResource MyButton}">
+            <Button.Background>
+                <ImageBrush ImageSource="/windows_media_player_back_button_preview.png" />
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

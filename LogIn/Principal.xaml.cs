@@ -72,5 +72,19 @@ namespace LogIn
             this.Visibility = Visibility.Hidden;
             objMostrarVenta.Show();
         }
+
+        private void BtnReportes_Click(object sender, RoutedEventArgs e)
+        {
+            TotalVentas objReporte = new TotalVentas();
+            this.Visibility = Visibility.Hidden;
+            objReporte.Show();
+        }
+
+        private void BtnUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            NuevoUsuario objUsuario = new NuevoUsuario();
+            this.Visibility = Visibility.Hidden;
+            objUsuario.Show();
+        }
     }
 }
