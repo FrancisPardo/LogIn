@@ -28,7 +28,7 @@ namespace LogIn
         {
             string[] lineas = { txt1.Text, txt2.Text, };
             System.IO.File.WriteAllLines(@"D:\user" + txt1.Text + ".txt", lineas);
-            MessageBox.Show("Usuario dado de Alta");
+            MessageBox.Show("Usuario ha sido creado");
             txt1.Text = "";
             txt2.Text = "";
         }
