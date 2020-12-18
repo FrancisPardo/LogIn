@@ -34,7 +34,7 @@
                 <ImageBrush ImageSource="/windows_media_player_back_button_preview.png" />
             </Button.Background>
         </Button>
-        <Label Foreground="White" x:Name="lblf" Content="Label" HorizontalAlignment="Left" Height="28" Margin="125,10,0,0" VerticalAlignment="Top" Width="258" Grid.ColumnSpan="2"/>
+        <Label Foreground="White" x:Name="lblf" Content="-" HorizontalAlignment="Left" Height="28" Margin="125,10,0,0" VerticalAlignment="Top" Width="258" Grid.ColumnSpan="2"/>
         <Button  x:Name="btn12" Content="Visualizar" HorizontalAlignment="Left" Height="47" Margin="220,313,0,0" VerticalAlignment="Top" Width="141" Click="Btn12_Click" Grid.Column="1"/>
     </Grid>
 </Window>
